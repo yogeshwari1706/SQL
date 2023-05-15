@@ -1,12 +1,13 @@
 create database crime;
 
-create table crime.crime_data (
+create table crime.crime_data_analysis (
 case_number varchar(20) not null,
 crime_category varchar(50) not null,
 crime_description varchar(60),
 crime_location varchar(50) not null,
-arrest_status varchar (10) not null
-);
+arrest_status varchar (10) not null,
+primary key (crime_description, crime_location)
+); 
 
 SELECT * FROM crime.crime_data;
 
@@ -35,11 +36,3 @@ ROW_NUMBER() OVER (PARTITION BY case_number ORDER BY case_number) AS rn
 WHERE rn = 1;
 
 
-create table crime.crime_data_analysis (
-case_number varchar(20) not null,
-crime_category varchar(50) not null,
-crime_description varchar(60),
-crime_location varchar(50) not null,
-arrest_status varchar (10) not null,
-primary key (crime_description, crime_location)
-); 
