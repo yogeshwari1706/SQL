@@ -1,6 +1,6 @@
 create database crime;
 
-create table crime.crime_data_analysis (
+create table crime.crime_data (
 case_number varchar(20) not null,
 crime_category varchar(50) not null,
 crime_description varchar(60),
