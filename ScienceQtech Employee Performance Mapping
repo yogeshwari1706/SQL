@@ -1,0 +1,24 @@
+Create database employee;
+
+-- Write a query to fetch EMP_ID, FIRST_NAME, LAST_NAME, GENDER, and DEPARTMENT from the employee record table, and make a list of employees and details of their department --
+
+select emp_id, first_name, last_name, gender, dept from emp_record;
+
+/* Write a query to fetch EMP_ID, FIRST_NAME, LAST_NAME, GENDER, DEPARTMENT, and EMP_RATING if the EMP_RATING is:
+less than two
+greater than four
+between two and four */
+
+select emp_id, first_name, last_name, gender, dept, emp_rating from emp_record 
+where emp_rating < 2;
+
+select emp_id, first_name, last_name, gender, dept, emp_rating from emp_record 
+where emp_rating > 4;
+
+select emp_id, first_name, last_name, gender, dept, emp_rating from emp_record 
+where emp_rating between 2 and 4;
+
+-- Write a query to concatenate the FIRST_NAME and the LAST_NAME of employees in the Finance department from the employee table and then give the resultant column alias as NAME --
+
+select concat(first_name, ' ', last_name) as Name from emp_record 
+where dept = 'finance';
